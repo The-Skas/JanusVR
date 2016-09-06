@@ -1,0 +1,59 @@
+<!-- Written with Janus VR.  URL: http://vesta.janusvr.com/nostrenz/human-village -->
+<html>
+<head>
+<title></title>
+<script type="text/javascript" src="human-village.js"></script>
+</head>
+<body>
+<FireBoxRoom>
+<Assets>
+<AssetObject src="assets/primitives/plane.obj" />
+<AssetObject id="nice-boat" mtl="http://nostrenz.github.io/janusvr-touhou/assets/objects/boat/model.mtl" src="http://nostrenz.github.io/janusvr-touhou/assets/objects/boat/model.obj.gz" />
+<AssetObject id="place-terrain" mtl="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/terrain.mtl" src="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/terrain.obj.gz" />
+<AssetObject id="pool-water" src="http://nostrenz.github.io/janusvr-touhou/assets/objects/pool/waterobject.obj.gz" />
+<AssetObject id="place-terrain-collision" src="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/terrain-collision.obj.gz" />
+<AssetObject id="place-plants" mtl="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/plants.mtl" src="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/plants.obj.gz" />
+<AssetObject id="hieda-no-akyuu" mtl="http://nostrenz.github.io/janusvr-touhou/assets/characters/hieda-no-akyuu/model.mtl" src="http://nostrenz.github.io/janusvr-touhou/assets/characters/hieda-no-akyuu/model.obj.gz" />
+<AssetObject id="mystia-lorelei" mtl="http://nostrenz.github.io/janusvr-touhou/assets/characters/mystia-lorelei/model.mtl" src="http://nostrenz.github.io/janusvr-touhou/assets/characters/mystia-lorelei/model.obj.gz" />
+<AssetObject id="keine-kamishirasawa" mtl="http://nostrenz.github.io/janusvr-touhou/assets/characters/keine-kamishirasawa/model.mtl" src="http://nostrenz.github.io/janusvr-touhou/assets/characters/keine-kamishirasawa/model.obj.gz" />
+<AssetObject id="place-water" src="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/water.obj.gz" />
+<AssetObject id="place-plants-collision" src="http://nostrenz.github.io/janusvr-touhou/assets/places/human-village/plants-collision.obj.gz" />
+<AssetImage id="thumbthings/6.png" src="thumbthings/6.png" />
+<AssetShader id="water_shader" src="http://nostrenz.github.io/janusvr-touhou/assets/shaders/fragment_water.glsl" vertex_src="http://nostrenz.github.io/janusvr-touhou/assets/shaders/vertex_water.glsl" />
+<AssetShader id="tree_shader" src="" vertex_src="http://nostrenz.github.io/janusvr-touhou/assets/shaders/vertex_tree.glsl" />
+<!-- JS -->
+<AssetScript src="myscheduler.js"/>
+<AssetScript src="human-village.js" />
+
+<!-- Sounds -->
+<AssetSound id="walk1" src="walk1.mp3" />
+<AssetSound id="walk2" src="walk2.mp3" />
+<AssetSound id="walk3" src="walk3.mp3" />
+<AssetSound id="walk4" src="walk4.mp3" />
+<AssetSound id="walk5" src="walk5.mp3" />
+<!-- <AssetSound id="bgm" src="http://nostrenz.github.io/janusvr-touhou/assets/audio/human-village.mp3" /> -->
+
+<AssetWebSurface height="800" id="wiki-keine" src="http://en.touhouwiki.net/wiki/Keine_Kamishirasawa" width="1000" />
+<AssetWebSurface height="800" id="wiki-village" src="http://en.touhouwiki.net/wiki/Human_Village" width="1000" />
+</Assets>
+<Room visible="false" pos="0 0.2 5" xdir="-1 0 0" ydir="0 1 0" zdir="0 0 -1" col="#ff0000">
+<Text js_id="0" pos="3 1.9 -1" xdir="0.707107 0 0.707107" zdir="-0.707107 0 0.707107" scale="1 1.5 1">Hieda no Akyuu</Text>
+<Text js_id="1" pos="-116 3 -61.5" xdir="-0.099504 0 -0.995037" zdir="0.995037 0 -0.099504" scale="1 1.5 1">Keine Kamishirasawa</Text>
+<Text js_id="mystia-name" pos="1 2.303263 -17" xdir="0.996768 0 0.080339" zdir="-0.080339 0 0.996768" scale="1 1.5 1">Mystia Lorelei</Text>
+<Text js_id="2" pos="4.6 -0.5 25.5" xdir="0 0 -1" zdir="1 0 0" scale="3 3 3">On the boat, press B to use it, B again to leave</Text>
+<Text js_id="3" pos="4.7 -0.7 25.5" xdir="0 0 -1" zdir="1 0 0" scale="2 2 2">(W: move forward; A/D: turn left/right)</Text>
+<Sound id="bgm" js_id="4" rect="-999 999 999 -999" loop="true" />
+<Object id="place-terrain" js_id="5" locked="true" lighting="false" cull_face="none" collision_id="place-terrain-collision" />
+<Object id="place-plants" js_id="6" locked="true" lighting="false" shader_id="tree_shader" cull_face="none" collision_id="place-plants-collision" />
+<Object id="place-water" js_id="7" locked="true" pos="0 -0.15 0" lighting="false" shader_id="water_shader" cull_face="none" />
+<Object id="pool-water" js_id="8" pos="-81 -0.13 -86" xdir="-1 0 0" ydir="0 0 -1" zdir="0 -1 0" scale="1 1 0.3" shader_id="water_shader" />
+<Object id="hieda-no-akyuu" js_id="9" pos="3 0 -1" xdir="0.707107 0 0.707107" zdir="-0.707107 0 0.707107" lighting="false" cull_face="none" collision_radius="0.5" />
+<Object id="keine-kamishirasawa" js_id="10" pos="-116 0.8 -61.5" xdir="-0.099504 0 -0.995037" zdir="0.995037 0 -0.099504" lighting="false" cull_face="none" collision_radius="0.5" />
+<Object id="mystia-lorelei" js_id="mystia-object" pos="1 0.303263 -17" xdir="0.707107 0 -0.707107" zdir="0.707107 0 0.707107" lighting="false" cull_face="none" collision_radius="0.5" />
+<Object id="nice-boat" js_id="boat" locked="true" pos="8.2 -1.633384 25" xdir="0 0 1" zdir="-1 0 0" lighting="false" cull_face="none" collision_id="nice-boat" />
+<Object id="plane" js_id="11" locked="true" pos="-4 0.7 -1" xdir="0.447214 0 -0.894427" ydir="-0.365148 0.912871 -0.182574" zdir="0.816497 0.408248 0.408248" scale="2 1 1" cull_face="none" collision_id="plane" websurface_id="wiki-village" />
+<Object id="plane" js_id="12" locked="true" pos="-115 1.9 -60.5" xdir="0.01 0 0.99995" ydir="0.28732 0.95783 -0.002873" zdir="-0.957782 0.287335 0.009578" scale="0.65 0.4 1" cull_face="none" collision_id="plane" websurface_id="wiki-keine" />
+</Room>
+</FireBoxRoom>
+</body>
+</html>
